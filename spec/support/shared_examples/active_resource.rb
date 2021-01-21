@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-shared_examples 'find resource' do
+shared_examples 'find resource' do |res_id|
   describe "find" do
     let(:resource_name) { described_class.name.split("::").last.downcase }
-    let(:resource_id) { 115 }
+    let(:resource_id) { res_id }
     let(:resource) { described_class.find(resource_id) }
 
     before { VCR.insert_cassette("resources/#{resource_name}") }
