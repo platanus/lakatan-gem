@@ -24,7 +24,8 @@ Initialize with the following code:
 
 ```ruby
 Lakatan.setup do |config|
-  config.site_url = "https://lakatan.dev/api/v1/bearers"
+  config.site_url = "https://lakatan.dev"
+  config.url_prefix = "/api/v1/bearers/"
   config.authorization_token = "XXX"
 end
 ```
@@ -39,7 +40,7 @@ end
 user = Lakatan::User.find(115)
 ```
 
-###### Attributes:
+###### Attributes:
 
 ```ruby
 user.id #=> 115
@@ -62,56 +63,68 @@ users = Lakatan::User.all
 ##### Find Team
 
 ```ruby
-user = Lakatan::Team.find(115)
+team = Lakatan::Team.find(115)
 ```
 
-###### Attributes:
+###### Attributes:
 
 ```ruby
-user.id #=> 115
-user.name #=> "Keepers of the seven keys"
-user.purpose #=> "Definir cómo se entregan accesos y permisos a los distintos sistemas que necesitamos dentro de Platanus."
-user.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
-user.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
-user.user_ids #=> [139, 140]
-user.task_ids #=> [33, 99]
-user.users #=> [#<Lakatan::User:0x00007f93be276178>, #<Lakatan::User:0x00007f93be276171]
-user.tasks #=> [#<Lakatan::Task:0x00007f93be276178>, #<Lakatan::Task:0x00007f93be276171]
+team.id #=> 115
+team.name #=> "Keepers of the seven keys"
+team.purpose #=> "Definir cómo se entregan accesos y permisos a los distintos sistemas que necesitamos dentro de Platanus."
+team.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
+team.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
+team.user_ids #=> [139, 140]
+team.task_ids #=> [33, 99]
+team.users #=> [#<Lakatan::User:0x00007f93be276178>, #<Lakatan::User:0x00007f93be276171]
+team.tasks #=> [#<Lakatan::Task:0x00007f93be276178>, #<Lakatan::Task:0x00007f93be276171]
 ```
 
 ##### Find Teams
 
 ```ruby
-users = Lakatan::Team.all
+teams = Lakatan::Team.all
 ```
 
-#### task
+#### Task
 
-##### Find task
+##### Find Task
 
 ```ruby
-user = Lakatan::Task.find(115)
+task = Lakatan::Task.find(115)
 ```
 
-###### Attributes:
+###### Attributes:
 
 ```ruby
-user.id #=> 115
-user.name #=> "Primera entrevista startup"
-user.goal #=> "Ir a la primera entrevista startup PV"
-user.raffle_type #=> "Equity"
-user.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
-user.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
-user.label_id #=> 0
-user.user_minimum #=> 100
-user.team_id #=> 10
-user.team #=> #<Lakatan::Team:0x00007f93be276178>
+task.id #=> 115
+task.name #=> "Primera entrevista startup"
+task.goal #=> "Ir a la primera entrevista startup PV"
+task.raffle_type #=> "Equity"
+task.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
+task.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
+task.label_id #=> 0
+task.user_minimum #=> 100
+task.team_id #=> 10
+task.team #=> #<Lakatan::Team:0x00007f93be276178>
+```
+
+###### Raffle:
+
+```ruby
+raffle = task.raffle #=> #<Lakatan::Raffle:0x00007f93be276178>
+raffle.users #=> [#<Lakatan::User:0x00007f93be276178>, #<Lakatan::User:0x00007f93be276171]
+```
+
+```ruby
+raffle = task.raffle(user_ids: [1, 2]) #=> #<Lakatan::Raffle:0x00007f93be276178>
+raffle.users #=> [#<Lakatan::User:0x00007f93be276178>, #<Lakatan::User:0x00007f93be276171]
 ```
 
 ##### Find tasks
 
 ```ruby
-users = Lakatan::Task.all
+tasks = Lakatan::Task.all
 ```
 
 ## Testing

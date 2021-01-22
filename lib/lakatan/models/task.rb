@@ -9,5 +9,9 @@ module Lakatan
     declare_attribute(:created_at, :datetime)
     declare_attribute(:updated_at, :datetime)
     declare_nested_resource(:team)
+
+    def raffle(user_ids: nil)
+      Lakatan::Raffle.raffle(task_id: id, user_ids: user_ids)
+    end
   end
 end

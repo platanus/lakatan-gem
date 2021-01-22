@@ -6,7 +6,7 @@ require "active_support/all"
 module Lakatan
   extend self
 
-  attr_accessor :site_url, :authorization_token
+  attr_accessor :site_url, :url_prefix, :authorization_token
 
   def setup
     yield self

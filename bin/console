@@ -6,6 +6,7 @@ require "lakatan"
 
 Lakatan.setup do |config|
   config.site_url = ENV.fetch("LAKATAN_SITE_URL")
+  config.url_prefix = ENV.fetch("LAKATAN_URL_PREFIX", "/api/v1/bearers/")
   config.authorization_token = ENV.fetch("LAKATAN_AUTHORIZATION_TOKEN")
 end
 

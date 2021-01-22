@@ -34,4 +34,20 @@ describe Lakatan::Task do
       it { expect(task.team).to be_a(Lakatan::Team) }
     end
   end
+
+  describe "#raffle" do
+    let(:task_id) { 1 }
+    let(:task) { described_class.new(id: task_id) }
+    let(:user_ids) { double }
+
+    before do
+      allow(Lakatan::Raffle).to receive(:raffle)
+    end
+
+    it do
+      expect(Lakatan::Raffle).to receive(:raffle)
+        .with(user_ids: user_ids, task_id: task_id).once
+      task.raffle(user_ids: user_ids)
+    end
+  end
 end
