@@ -75,6 +75,8 @@ user.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
 user.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
 user.user_ids #=> [139, 140]
 user.task_ids #=> [33, 99]
+user.users #=> [#<Lakatan::User:0x00007f93be276178>, #<Lakatan::User:0x00007f93be276171]
+user.tasks #=> [#<Lakatan::Task:0x00007f93be276178>, #<Lakatan::Task:0x00007f93be276171]
 ```
 
 ##### Find Teams

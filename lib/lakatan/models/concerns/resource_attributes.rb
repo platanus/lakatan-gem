@@ -42,6 +42,14 @@ module Lakatan
           format_attribute_value(value, attribute_type)
         end
       end
+
+      def declare_collection(collection_name)
+        define_method(collection_name) do
+          ids = send("#{collection_name.to_s.singularize}_ids")
+          collection_class = "Lakatan::#{collection_name.to_s.classify}".constantize
+          collection_class.all.select { |item| ids.include?(item.id) }
+        end
+      end
     end
   end
 end

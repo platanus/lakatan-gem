@@ -6,5 +6,7 @@ module Lakatan
     declare_attribute(:updated_at, :datetime)
     declare_attribute(:task_ids)
     declare_attribute(:user_ids)
+    declare_collection(:tasks)
+    declare_collection(:users)
   end
 end
