@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "pry"
 require "lakatan"
 
 Lakatan.setup do |config|
@@ -15,5 +16,4 @@ end
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+Pry.start(__FILE__)

@@ -1,6 +1,7 @@
 require "lakatan/version"
 require "require_all"
 require "activeresource"
+require "active_support/all"
 
 module Lakatan
   extend self
