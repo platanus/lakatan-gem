@@ -57,6 +57,32 @@ user.teams #=> [#<Lakatan::Team:0x00007f93be276178>, #<Lakatan::Team:0x00007f93b
 users = Lakatan::User.all
 ```
 
+#### Team
+
+##### Find Team
+
+```ruby
+user = Lakatan::Team.find(115)
+```
+
+**Attributes:**
+
+```ruby
+user.id #=> 115
+user.name #=> "Keepers of the seven keys"
+user.purpose #=> "Definir cómo se entregan accesos y permisos a los distintos sistemas que necesitamos dentro de Platanus."
+user.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
+user.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
+user.user_ids #=> [139, 140]
+user.task_ids #=> [33, 99]
+```
+
+##### Find Teams
+
+```ruby
+users = Lakatan::Team.all
+```
+
 ## Testing
 
 To run the specs you need to execute, **in the root path of the gem**, the following command:
