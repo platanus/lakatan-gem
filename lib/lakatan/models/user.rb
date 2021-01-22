@@ -6,6 +6,6 @@ module Lakatan
     declare_attribute(:updated_at, :datetime)
     declare_attribute(:last_org, :integer)
     declare_attribute(:team_ids)
-    declare_collection(:teams)
+    declare_nested_collection(:teams)
   end
 end

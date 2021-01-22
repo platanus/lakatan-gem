@@ -39,7 +39,7 @@ end
 user = Lakatan::User.find(115)
 ```
 
-**Attributes:**
+###### Attributes:
 
 ```ruby
 user.id #=> 115
@@ -65,7 +65,7 @@ users = Lakatan::User.all
 user = Lakatan::Team.find(115)
 ```
 
-**Attributes:**
+###### Attributes:
 
 ```ruby
 user.id #=> 115
@@ -83,6 +83,35 @@ user.tasks #=> [#<Lakatan::Task:0x00007f93be276178>, #<Lakatan::Task:0x00007f93b
 
 ```ruby
 users = Lakatan::Team.all
+```
+
+#### task
+
+##### Find task
+
+```ruby
+user = Lakatan::Task.find(115)
+```
+
+###### Attributes:
+
+```ruby
+user.id #=> 115
+user.name #=> "Primera entrevista startup"
+user.goal #=> "Ir a la primera entrevista startup PV"
+user.raffle_type #=> "Equity"
+user.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
+user.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
+user.label_id #=> 0
+user.user_minimum #=> 100
+user.team_id #=> 10
+user.team #=> #<Lakatan::Team:0x00007f93be276178>
+```
+
+##### Find tasks
+
+```ruby
+users = Lakatan::Task.all
 ```
 
 ## Testing
