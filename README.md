@@ -20,7 +20,42 @@ bundle install
 
 ## Usage
 
-TODO
+Initialize with the following code:
+
+```ruby
+Lakatan.setup do |config|
+  config.site_url = "https://lakatan.dev/api/v1/bearers"
+  config.authorization_token = "XXX"
+end
+```
+
+### Resources
+
+#### User
+
+##### Find User
+
+```ruby
+user = Lakatan::User.find(115)
+```
+
+**Attributes:**
+
+```ruby
+user.id #=> 115
+user.name #=> "Andrés Matte"
+user.email #=> "andres@platan.us"
+user.created_at #=> Thu, 17 Dec 2020 20:40:08 +0000
+user.updated_at #=> Thu, 24 Dec 2020 20:23:00 +0000
+user.team_ids #=> [103, 97, 96]
+user.teams #=> [#<Lakatan::Team:0x00007f93be276178>, #<Lakatan::Team:0x00007f93be276171]
+```
+
+##### Find Users
+
+```ruby
+users = Lakatan::User.all
+```
 
 ## Testing
 
