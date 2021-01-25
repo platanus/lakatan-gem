@@ -1,7 +1,15 @@
 require "lakatan/version"
+require "require_all"
 require "activeresource"
+require "active_support/all"
 
 module Lakatan
-  class Error < StandardError; end
-  # Your code goes here...
+  extend self
+
+  attr_accessor :site_url, :url_prefix, :authorization_token
+
+  def setup
+    yield self
+    require "lakatan/main"
+  end
 end

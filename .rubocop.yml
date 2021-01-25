@@ -531,5 +531,7 @@ RSpec/AnyInstance:
   Enabled: false
 RSpec/MultipleMemoizedHelpers:
   Enabled: false
+RSpec/FilePath:
+  Enabled: false
 Gemspec/RequiredRubyVersion:
   Enabled: false

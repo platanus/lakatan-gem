@@ -1,7 +1,14 @@
 #!/usr/bin/env ruby
 
 require "bundler/setup"
+require "pry"
 require "lakatan"
+
+Lakatan.setup do |config|
+  config.site_url = ENV.fetch("LAKATAN_SITE_URL")
+  config.url_prefix = ENV.fetch("LAKATAN_URL_PREFIX", "/api/v1/bearers/")
+  config.authorization_token = ENV.fetch("LAKATAN_AUTHORIZATION_TOKEN")
+end
 
 # You can add fixtures and/or initialization code here to make experimenting
 # with your gem easier. You can also use a different console, if you like.
@@ -10,5 +17,4 @@ require "lakatan"
 # require "pry"
 # Pry.start
 
-require "irb"
-IRB.start(__FILE__)
+Pry.start(__FILE__)
